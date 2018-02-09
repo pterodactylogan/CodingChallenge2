@@ -12,20 +12,17 @@ def iterative_wrapper(str1,str2):
 
 def geneSplicing(str1, str2):
     string = str1
-    flag= True
     while len(string)>0:
-        if string in str2:
-            flag = False
+        if string==str2[0:len(string)]:
             str1=str1.replace(string, "")
             return str1 + str2
             break
         string = string[1:]
-    if flag:
-        return str1+str2
+    return str1+str2
 
 def main():
     gene1="AACCTGT"
-    gene2="CTGTACG"
+    gene2="GCTGTACGA"
     print(iterative_wrapper(gene1,gene2))
 
         
