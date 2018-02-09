@@ -5,17 +5,18 @@ Created on Fri Feb  9 14:14:49 2018
 
 @author: Logan
 """
+debug=True
 level=0
-
 
 def printdecorator(func):
     def wrapper(*args, **kwargs):
         return func(level*"\t",*args, **kwargs)
     return wrapper
 
-print = printdecorator(print)
+if debug: print = printdecorator(print)
 
 def printdebugger(func):
+    if not debug: return func
     def wrapper(*args, **kwargs):
         global level
         print("Enter function: "+func.__name__+str(args))
@@ -26,7 +27,7 @@ def printdebugger(func):
         return results
     return wrapper
 
-#@printdebugger       
+@printdebugger      
 def wrapper(gene1, gene2):
     '''wrapper for genesplicer that cuts strings down to matching lengths'''
     if len(gene1)==len(gene2): return recursive_splicing(gene1,gene2)
@@ -40,7 +41,7 @@ def wrapper(gene1, gene2):
     if len(forward)<len(reverse): return forward
     else: return reverse
     
-#@printdebugger
+@printdebugger
 def recursive_splicing(gene1, gene2):
     '''takes two strings of the same length and returns the splicing'''
     if gene1==gene2: return gene1
