@@ -5,7 +5,7 @@ Created on Fri Feb  9 14:14:49 2018
 
 @author: Logan
 """
-debug=True
+debug=False
 level=0
 
 def printdecorator(func):
