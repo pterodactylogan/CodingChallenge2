@@ -3,14 +3,14 @@
 #Authors: Mégane Michaud, Logan Swanson
 
 def iterative_wrapper(str1,str2):
-    forward=geneSplicing(str1,str2)
-    reverse=geneSplicing(str2,str1)
+    forward=iterative_splicing(str1,str2)
+    reverse=iterative_splicing(str2,str1)
     
     if len(forward)<len(reverse): return forward
     else: return reverse
     
 
-def geneSplicing(str1, str2):
+def iterative_splicing(str1, str2):
     if str1 in str2: return str2
     string = str1
     while len(string)>0:

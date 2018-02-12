@@ -6,8 +6,10 @@ Created on Fri Feb  9 14:14:49 2018
 @author: Logan
 """
     
-def wrapper(gene1, gene2):
+def recursive_wrapper(gene1, gene2):
     '''wrapper for genesplicer that cuts strings down to matching lengths'''
+    if gene1 in gene2: return gene2
+    if gene2 in gene1: return gene1
     if len(gene1)==len(gene2): 
         forward= recursive_splicing(gene1,gene2)
         reverse=recursive_splicing(gene2,gene1)
@@ -30,8 +32,8 @@ def recursive_splicing(gene1, gene2):
         
         
 def main():
-    gene1="AACCTGT"
+    gene1="CGA"
     gene2="GCTGTACGA"
-    print(wrapper(gene1,gene2))
+    print(recursive_wrapper(gene1,gene2))
     
 main()
