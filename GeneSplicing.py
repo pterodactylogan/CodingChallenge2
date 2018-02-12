@@ -11,12 +11,12 @@ def iterative_wrapper(str1,str2):
     
 
 def geneSplicing(str1, str2):
+    if str1 in str2: return str2
     string = str1
     while len(string)>0:
         if string==str2[0:len(string)]:
             str1=str1.replace(string, "")
             return str1 + str2
-            break
         string = string[1:]
     return str1+str2
 
