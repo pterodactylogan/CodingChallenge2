@@ -2,6 +2,8 @@
 #Coding Challenge II
 #Authors: Mégane Michaud, Logan Swanson
 
+accepted = ['A','C','G','T']
+
 def iterative_wrapper(str1,str2):
     forward=iterative_splicing(str1,str2)
     reverse=iterative_splicing(str2,str1)
@@ -21,9 +23,16 @@ def iterative_splicing(str1, str2):
     return str1+str2
 
 def main():
-    gene1="AACCTGT"
+    gene1="AACTGT"
     gene2="GCTGTACGA"
+    check_string(gene1)
+    check_string(gene2)
     print(iterative_wrapper(gene1,gene2))
 
-        
+def check_string(str1):
+    '''checks to see if str1 is a valid input'''
+    for char in str1:
+        if not char in accepted:
+            raise Exception("invalid input")
+            
 main()
