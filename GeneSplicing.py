@@ -23,10 +23,10 @@ def iterative_splicing(str1, str2):
 	string = str1
 	while len(string)>0:
 		if string==str2[0:len(string)]:
-			str1=str1.replace(string, "")
+			str1=str1.replace(string, "",1)
 			return str1 + str2
 		string = string[1:]
-		return str1+str2
+	return str1+str2
 
 def main():
     gene1 = input("Input the first gene: ")      
