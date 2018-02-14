@@ -11,15 +11,14 @@ def iterative_wrapper(str1,str2):
 	reverse=iterative_splicing(str2,str1)
 	
 	if len(forward)<len(reverse): 
-		print_out(forward, str1, str2)
 		return forward
 	else: 
-		print_out(reverse, str1, str2)
 		return reverse
     
 
 def iterative_splicing(str1, str2):
 	'''takes two strings and returns the string resulting from their maximum amount of overlap'''
+    #if str1 is already a substring of str2, DONE
 	if str1 in str2: return str2
 	string = str1
 	while len(string)>0:
@@ -36,7 +35,7 @@ def main():
     gene2 = input("Input the second gene: ")
     check_string(gene1)
     check_string(gene2)
-    print(iterative_wrapper(gene1,gene2))
+    print_out(iterative_wrapper(gene1,gene2),gene1,gene2)
 
 def check_string(str1):
     '''checks to see if str1 is a valid input'''

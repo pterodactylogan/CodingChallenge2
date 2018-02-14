@@ -1,5 +1,7 @@
-TODO
--docstrings/variable/function names/comments
--validate input
--report length in addition to returning string
--generate readme with efficiency analysis
+GeneSplicing.py and recursiveSplicing.py approach this problem differently, but they are both used the same way, and should both be run in Python 3. For both programs, the user will be prompted twice to enter each of the genes they would like to compare. The genes entered by the user should contain only capital A, G, T or C, otherwise the program will throw an exception.
+
+In terms of efficiency, GeneSplicing.py approaches this problem by checking each possible substring at the end of the first string, and checking if it matches the beginning of the second string. This program must execute its loop once for each letter in each string provided, so its efficiency is bounded from below by the length of the strings.
+
+recursiveSplicing.py approaches this problem recursively, by comparing the end of the first string to the beginning of the second in smaller and smaller chunks until it finds complete overlap. This is very similar to the logic of GeneSplicing.py, it is just implemented recursively as opposed to iteratively. With a small amount of overhead for cleaning up the strings in the wrapper function, this program only needs to do a number of comparisons equal to the number of letters in the shorter string, so it is only bounded by the length of the shorter of the two strings. However, because it is recursive, this program spends more time moving around the stack than its iterative counterpart.
+
+We decided to submit both files because, in comparing the actual runtimes of these two programs, we found that they were very comparable. Our tests are demonstrated in the Jupyter notebook CodingChallenge2.ipynb
