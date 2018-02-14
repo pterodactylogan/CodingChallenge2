@@ -2,8 +2,6 @@
 #Coding Challenge II
 #Authors: Mégane Michaud, Logan Swanson
 
-accepted = ['A','C','G','T']
-
 def iterative_wrapper(str1,str2):
 	'''returns the shortest string such that both str1 and str2 are substrings'''
     #check both directions
@@ -31,14 +29,15 @@ def iterative_splicing(str1, str2):
 	return str1+str2
 
 def main():
-    gene1 = input("Input the first gene: ")      
-    gene2 = input("Input the second gene: ")
+    gene1 = input("Input the first gene: ").upper()   
+    gene2 = input("Input the second gene: ").upper()
     check_string(gene1)
     check_string(gene2)
     print_out(iterative_wrapper(gene1,gene2),gene1,gene2)
 
 def check_string(str1):
     '''checks to see if str1 is a valid input'''
+    accepted = ['A','C','G','T']
     for char in str1:
         if not char in accepted:
             raise Exception("invalid input")

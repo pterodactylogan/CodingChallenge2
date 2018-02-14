@@ -1,8 +1,6 @@
 #File: recursiveSplicing.py
 #Coding Challenge II
-#Authors: Logan Swanson, Mégane Michaud
-
-accepted = ['A','C','G','T']    
+#Authors: Logan Swanson, Mégane Michaud   
 
 def recursive_wrapper(gene1, gene2):
     '''wrapper for genesplicer that cuts strings down to matching lengths'''
@@ -41,14 +39,15 @@ def recursive_splicing(gene1, gene2):
         
         
 def main():
-    gene1 = input("Input the first gene: ")      
-    gene2 = input("Input the second gene: ")
+    gene1 = input("Input the first gene: ").upper()  
+    gene2 = input("Input the second gene: ").upper()
     check_string(gene1)
     check_string(gene2)
     print_out(recursive_wrapper(gene1,gene2),gene1,gene2)
     
 def check_string(str1):
     '''checks to see if str1 is a valid input'''
+    accepted = ['A','C','G','T'] 
     for char in str1:
         if not char in accepted:
             raise Exception("invalid input")
