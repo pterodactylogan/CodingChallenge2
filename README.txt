@@ -1,4 +1,4 @@
-GeneSplicing.py and recursiveSplicing.py approach this problem differently, but they are both used the same way, and should both be run in Python 3. For both programs, the user will be prompted twice to enter each of the genes they would like to compare. The genes entered by the user should contain only capital A, G, T or C, otherwise the program will throw an exception.
+GeneSplicing.py and recursiveSplicing.py approach this problem differently, but they are both used the same way, and should both be run in Python 3. For both programs, the user will be prompted twice to enter each of the genes they would like to compare. The genes entered by the user should contain only the letters A, G, T or C, otherwise the program will throw an exception.
 
 In terms of efficiency, GeneSplicing.py approaches this problem by checking each possible substring at the end of the first string, and checking if it matches the beginning of the second string. This program must execute its loop once for each letter in each string provided, so its efficiency is bounded from below by the length of the strings.
 
